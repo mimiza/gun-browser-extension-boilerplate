@@ -1,3 +1,6 @@
+# Customized
+*.lock
+
 # Logs
 logs
 *.log

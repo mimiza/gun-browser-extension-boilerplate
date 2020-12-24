@@ -1,0 +1,40 @@
+{
+    "update_url": "https://clients2.google.com/service/update2/crx",
+    "name": "Gun Browser Extension Boilerplate",
+    "description": "Gun Browser Extension Boilerplate",
+    "author": "MIMIZA",
+    "version": "1.0",
+    "manifest_version": 2,
+    "permissions": [
+        "storage",
+        "tabs",
+        "activeTab",
+        "webRequest",
+        "webRequestBlocking",
+        "webNavigation",
+        "contextMenus",
+        "management",
+        "*://*/*",
+        "<all_urls>"
+    ],
+    "content_security_policy": "script-src 'sha256-juD5OiaAn1jWC/orMHh/6jyN1zv7zef2TZZepMfLUq4=' 'self' 'unsafe-eval' https://mimiza.herokuapp.com https://*.github.com https://raw.githubusercontent.com https://*.jsdelivr.net https://*.google-analytics.com; connect-src 'self' 'unsafe-inline' 'unsafe-eval' wss://* https://*.github.com https://raw.githubusercontent.com https://*.jsdelivr.net https://*.google-analytics.com; object-src 'self' 'unsafe-eval'",
+    "icons": {
+        "19": "/img/icon-19.png",
+        "38": "/img/icon-38.png",
+        "48": "/img/icon-48.png",
+        "128": "/img/icon-128.png"
+    },
+    "browser_action": {},
+    "background": {
+        "page": "/background.html",
+        "persistent": true
+    },
+    "content_scripts": [
+        {
+            "matches": ["*://*.twitter.com/*"],
+            "js": ["/dist/content.js"],
+            "all_frames": true
+        }
+    ],
+    "options_page": "/index.html"
+}
