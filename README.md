@@ -1,0 +1,1 @@
+# gun-browser-extension-boilerplate
